@@ -3,6 +3,9 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
+import Button from '@mui/material/Button';
+import BookIcon from '@mui/icons-material/Book';
+import { Link } from 'react-router-dom';
 import { useFiles } from '../hooks/useFiles';
 import UploadArea from '../components/UploadArea';
 import CategoryTabs from '../components/CategoryTabs';
@@ -51,7 +54,7 @@ function HomePage() {
         py: { xs: 2.5, md: 3 },
       }}>
         <Container maxWidth='lg'>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 0.5 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 0.5 }}>
             <Typography sx={{
               fontSize: { xs: '1.4rem', md: '1.75rem' },
               fontWeight: 800,
@@ -60,6 +63,25 @@ function HomePage() {
             }}>
               SJ File_Hub
             </Typography>
+            <Button
+              component={Link}
+              to='/guestbook'
+              startIcon={<BookIcon sx={{ fontSize: 18 }} />}
+              size='small'
+              variant='outlined'
+              sx={{
+                textTransform: 'none',
+                fontSize: 13,
+                fontWeight: 600,
+                borderRadius: '8px',
+                borderColor: '#A8D8EE',
+                color: '#5B9EC9',
+                px: 2,
+                '&:hover': { backgroundColor: '#EEF7FC', borderColor: '#5B9EC9' },
+              }}
+            >
+              방명록
+            </Button>
           </Box>
           <Typography sx={{ fontSize: 14, color: 'text.secondary' }}>
             파일을 업로드하고 팀원들과 안전하게 공유하세요 · Supabase 기반 영구 저장
